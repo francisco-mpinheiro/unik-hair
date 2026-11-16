@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ÜNIK Hair</title>
     <script src="./vendor/react.js"></script>
     <script src="./vendor/react-dom.js"></script>
@@ -12,15 +13,21 @@
 <body>
     <x-dc>
         <helmet>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="stylesheet"
                 href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=DM+Sans:wght@400;500;700&amp;display=swap">
             <style>
+                * {
+                    box-sizing: border-box;
+                }
+
                 body {
                     margin: 0;
                     font-family: 'DM Sans', system-ui, sans-serif;
                     color: #2A1620;
-                    background: #FBF3F1
+                    background: #FBF3F1;
+                    -webkit-text-size-adjust: 100%;
                 }
 
                 a {
@@ -29,6 +36,65 @@
 
                 a:hover {
                     color: #7E1650
+                }
+
+                @media (max-width: 768px) {
+                    div[style*="padding:0 24px"] {
+                        padding-left: 16px !important;
+                        padding-right: 16px !important;
+                    }
+
+                    div[style*="padding:72px 0 80px"],
+                    div[style*="padding:88px 0"],
+                    div[style*="padding:80px 0"] {
+                        padding-top: 36px !important;
+                        padding-bottom: 36px !important;
+                        gap: 24px !important;
+                    }
+
+                    div[style*="padding:32px 0"] {
+                        padding-top: 24px !important;
+                        padding-bottom: 24px !important;
+                        gap: 18px !important;
+                    }
+
+                    div[style*="flex:1 1 460px"],
+                    div[style*="flex:1 1 380px"],
+                    div[style*="flex:1 1 340px"],
+                    div[style*="flex:2 1 480px"],
+                    div[style*="flex:1 1 320px"] {
+                        flex: 1 1 100% !important;
+                        width: 100% !important;
+                    }
+
+                    div[style*="flex:1 1 220px"] {
+                        flex: 1 1 calc(50% - 12px) !important;
+                    }
+
+                    div[style*="minmax(min(100%,300px),1fr)"],
+                    div[style*="minmax(min(100%,320px),1fr)"] {
+                        grid-template-columns: 1fr !important;
+                        gap: 16px !important;
+                    }
+
+                    div[style*="minmax(min(100%,220px),1fr)"] {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                        gap: 12px !important;
+                    }
+
+                    h1 {
+                        font-size: 36px !important;
+                        line-height: 1.08 !important;
+                    }
+
+                    h2 {
+                        font-size: 28px !important;
+                        line-height: 1.12 !important;
+                    }
+
+                    h3 {
+                        font-size: 24px !important;
+                    }
                 }
             </style>
         </helmet>
